@@ -23,6 +23,7 @@ public class MainClass {
             final int randomSpeed = 20 + (int) (Math.random() * 10);
             cars[i] = new Car(race, randomSpeed);
         }
+
         for (Car car : cars) {
             new Thread(car).start();
         }
@@ -57,11 +58,13 @@ public class MainClass {
                 }
             }).start();
         }
+
         try {
             countDownLatchWin.await();
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
+
         System.out.println("ВАЖНОЕ ОБЪЯВЛЕНИЕ >>> Гонка закончилась!!!");
     }
 }

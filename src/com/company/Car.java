@@ -6,11 +6,6 @@ import java.util.concurrent.CyclicBarrier;
 
 public class Car implements Runnable {
     private static int CARS_COUNT;
-
-    static {
-        CARS_COUNT = 0;
-    }
-
     private Race race;
     private int speed;
     private String name;
@@ -19,11 +14,11 @@ public class Car implements Runnable {
     private static CountDownLatch countDownLatchReady;
 
     static {
+        CARS_COUNT = 0;
         countDownLatchFinish = MainClass.countDownLatchFinish;
         countDownLatchReady = MainClass.countDownLatchReady;
         startBarrier = MainClass.startBarrier;
     }
-
 
     public String getName() {
         return name;

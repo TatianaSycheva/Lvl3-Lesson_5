@@ -6,6 +6,7 @@ import java.util.concurrent.CyclicBarrier;
 import java.util.concurrent.locks.ReentrantReadWriteLock;
 
 public class MainClass {
+
     static final int CARS_COUNT = 4;
     static final CountDownLatch countDownLatchFinish = new CountDownLatch(CARS_COUNT);
     static final CountDownLatch countDownLatchReady = new CountDownLatch(CARS_COUNT);
